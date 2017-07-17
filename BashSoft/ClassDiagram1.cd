@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BashSoft.CommandInterpreter">
+    <Position X="0.5" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>QAgAgAAQAABAgIAABAAJAAAAAIAABCIAAAAAAgABAAA=</HashCode>
+      <FileName>IO\CommandInterpreter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BashSoft.InputReader">
+    <Position X="6.25" Y="6.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAgAAAAAAAA=</HashCode>
+      <FileName>IO\InputReader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BashSoft.IOManager">
+    <Position X="7" Y="0.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAABAAAAAAAAAAAAQCAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IO\IOManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BashSoft.OutputWriter">
+    <Position X="9" Y="6.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAQAAAAAAAEAABAgAAAAAAAAAAAA=</HashCode>
+      <FileName>IO\OutputWriter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BashSoft.Tester">
+    <Position X="2.5" Y="6.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAEQAAAAAAAAAAAAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>Judge\Tester.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BashSoft.Launcher">
+    <Position X="13.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Launcher.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BashSoft.RepositoryFilter">
+    <Position X="10.25" Y="4.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>Repository\RepositoryFilter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BashSoft.RepositorySorter">
+    <Position X="13.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repository\RepositorySorter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BashSoft.StudentsRepository">
+    <Position X="10.25" Y="0.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAMIAAABAABEAAAAAAACACAAAAAAAAAAABACAAAAAA=</HashCode>
+      <FileName>Repository\StudentsRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BashSoft.ExceptionMessages">
+    <Position X="3.75" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAACAAYgAAAAQEAAAAAgBAACAAgAAAMAAA=</HashCode>
+      <FileName>Static data\ExceptionMessages.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BashSoft.SessionData">
+    <Position X="0.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Static data\SessionData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
