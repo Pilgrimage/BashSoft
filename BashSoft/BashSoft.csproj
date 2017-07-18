@@ -66,6 +66,7 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
     <None Include="Instructions01\01.CSAdv-Stacks-And-Queues-Lab.docx" />
     <None Include="Instructions01\02.CSAdv-Sets-And-Dictionaries-Lab.docx" />
     <None Include="Instructions01\03.CSAdv-Files-And-Directories-Lab.docx" />

@@ -1,13 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text.RegularExpressions;
-using BashSoft.Exceptions;
-using BashSoft.Models;
-
-namespace BashSoft
+﻿namespace BashSoft
 {
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Linq;
+    using System.Text.RegularExpressions;
+    using BashSoft.Exceptions;
+    using BashSoft.Models;
+
     public class StudentsRepository
     {
         private Dictionary<string, Course> courses;

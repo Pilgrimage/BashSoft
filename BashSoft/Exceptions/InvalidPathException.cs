@@ -6,11 +6,13 @@
     {
         private const string InvalidPath = "The source does not exist.";
 
-        public InvalidPathException() : base(InvalidPath)
+        public InvalidPathException() 
+            : base(InvalidPath)
         {
         }
 
-        public InvalidPathException(string message) : base(message)
+        public InvalidPathException(string message) 
+            : base(message)
         {
         }
     }

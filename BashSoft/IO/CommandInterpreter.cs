@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BashSoft
+﻿namespace BashSoft
 {
+    using System;
+    using System.Diagnostics;
+    using System.IO;
+
     public class CommandInterpreter
     {
         private Tester judge;
@@ -49,8 +44,7 @@ namespace BashSoft
                 OutputWriter.DisplayException(e.Message);
             }
         }
-
-
+        
         private void ParseCommand(string input, string command, string[] data)
         {
             switch (command)

@@ -6,7 +6,8 @@
     {
         private const string InvalidCommand = "The command '{0}' is invalid";
 
-        public InvalidCommandException(string message) : base(string.Format(InvalidCommand, message))
+        public InvalidCommandException(string message) 
+            : base(string.Format(InvalidCommand, message))
         {
         }
     }

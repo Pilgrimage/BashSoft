@@ -1,9 +1,9 @@
-﻿using System;
-using System.IO;
-using BashSoft.Exceptions;
-
-namespace BashSoft
+﻿namespace BashSoft
 {
+    using System;
+    using System.IO;
+    using BashSoft.Exceptions;
+
     public class Tester
     {
         public string GetMismatchPath(string expectedOutputPath)
