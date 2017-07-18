@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
+using BashSoft.Exceptions;
 using BashSoft.Models;
 
 namespace BashSoft
@@ -28,12 +29,12 @@ namespace BashSoft
             {
                 if (studentsToTake == null)
                 {
-                    studentsToTake = this.courses[courseName].studentsByName.Count;
+                    studentsToTake = this.courses[courseName].StudentsByName.Count;
                 }
 
                 Dictionary<string, double> marks = this.courses[courseName]
-                    .studentsByName
-                    .ToDictionary(x => x.Key, x => x.Value.marksByCourseName[courseName]);
+                    .StudentsByName
+                    .ToDictionary(x => x.Key, x => x.Value.MarksByCourseName[courseName]);
 
                 this.filter.FilterAndTake(marks, givenFilter, studentsToTake.Value);
             }
@@ -45,12 +46,12 @@ namespace BashSoft
             {
                 if (studentsToTake == null)
                 {
-                    studentsToTake = this.courses[courseName].studentsByName.Count;
+                    studentsToTake = this.courses[courseName].StudentsByName.Count;
                 }
 
                 Dictionary<string, double> marks = this.courses[courseName]
-                    .studentsByName
-                    .ToDictionary(x => x.Key, x => x.Value.marksByCourseName[courseName]);
+                    .StudentsByName
+                    .ToDictionary(x => x.Key, x => x.Value.MarksByCourseName[courseName]);
 
                 this.sorter.OrderAndTake(marks, comparison, studentsToTake.Value);
             }
@@ -60,8 +61,8 @@ namespace BashSoft
         {
             if (this.isDataInitialized)
             {
-                OutputWriter.DisplayException(ExceptionMessages.DataAlreadyInitialisedException);
-                return;
+                //OutputWriter.DisplayException(ExceptionMessages.DataAlreadyInitialisedException);
+                throw new InvalidOperationException(ExceptionMessages.DataAlreadyInitialisedException);
             }
 
             this.students = new Dictionary<string, Student>();
@@ -74,8 +75,8 @@ namespace BashSoft
         {
             if (!this.isDataInitialized)
             {
-                OutputWriter.DisplayException(ExceptionMessages.DataNotInitializedExceptionMessage);
-                return;
+                //OutputWriter.DisplayException(ExceptionMessages.DataNotInitializedExceptionMessage);
+                throw new ArgumentException(ExceptionMessages.DataNotInitializedExceptionMessage);
             }
 
             this.students = null;
@@ -146,8 +147,8 @@ namespace BashSoft
             }
             else
             {
-                OutputWriter.WriteMessageOnNewLine(ExceptionMessages.InvalidPath);
-                return;
+                //OutputWriter.WriteMessageOnNewLine(ExceptionMessages.InvalidPath);
+                throw new InvalidPathException();
             }
 
             this.isDataInitialized = true;
@@ -177,7 +178,7 @@ namespace BashSoft
 
         private bool IsQueryForStudentPossible(string courseName, string studentUserName)
         {
-            if (IsQueryForCoursePossible(courseName) && this.courses[courseName].studentsByName.ContainsKey(studentUserName))
+            if (IsQueryForCoursePossible(courseName) && this.courses[courseName].StudentsByName.ContainsKey(studentUserName))
             {
                 return true;
             }
@@ -192,7 +193,7 @@ namespace BashSoft
         public void GetStudentScoresFromCourse(string courseName, string username)
         {
             OutputWriter.PrintStudent(
-                new KeyValuePair<string, double>(username, this.courses[courseName].studentsByName[username].marksByCourseName[courseName]));
+                new KeyValuePair<string, double>(username, this.courses[courseName].StudentsByName[username].MarksByCourseName[courseName]));
         }
 
         public void GetAllStudentsFromCourse(string courseName)
@@ -200,7 +201,7 @@ namespace BashSoft
             if (IsQueryForCoursePossible(courseName))
             {
                 OutputWriter.WriteMessageOnNewLine($"{courseName}");
-                foreach (var studentMarksEntry in this.courses[courseName].studentsByName)
+                foreach (var studentMarksEntry in this.courses[courseName].StudentsByName)
                 {
                     this.GetStudentScoresFromCourse(courseName,studentMarksEntry.Key);
                 }

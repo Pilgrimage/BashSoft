@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using BashSoft.Exceptions;
 
 namespace BashSoft
 {
@@ -31,9 +32,9 @@ namespace BashSoft
                 PrintOutput(mismatches, hasMismatch, mismatchesPath);
                 OutputWriter.WriteMessageOnNewLine("Files read!");
             }
-            catch (FileNotFoundException)
+            catch (IOException)
             {
-                OutputWriter.WriteMessageOnNewLine(ExceptionMessages.InvalidPath);
+                throw new InvalidPathException();
             }
         }
 
@@ -84,19 +85,14 @@ namespace BashSoft
                 {
                     OutputWriter.WriteMessageOnNewLine(line);
                 }
-                try
-                {
 
-                }
-                catch (DirectoryNotFoundException)
-                {
-                    OutputWriter.WriteMessageOnNewLine(ExceptionMessages.InvalidPath);
-                }
                 File.WriteAllLines(mismatchesPath, mismatches);
                 return;
             }
-
-            OutputWriter.WriteMessageOnNewLine("Files are identical. There are no mismatches.");
+            else
+            {
+                OutputWriter.WriteMessageOnNewLine("Files are identical. There are no mismatches.");
+            }
         }
     }
 }

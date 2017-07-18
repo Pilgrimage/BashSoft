@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -22,8 +24,35 @@ namespace BashSoft
 
         public void InterpredCommand(string input)
         {
-            string[] data = input.Split();
+            string[] data = input.Split(' ');
             string command = data[0];
+            command = command.ToLower();
+
+            try
+            {
+                this.ParseCommand(input, command, data);
+            }
+            catch (DirectoryNotFoundException dnfe)
+            {
+                OutputWriter.DisplayException(dnfe.Message);
+            }
+            catch (ArgumentOutOfRangeException aoore)
+            {
+                OutputWriter.DisplayException(aoore.Message);
+            }
+            catch (ArgumentException ae)
+            {
+                OutputWriter.DisplayException(ae.Message);
+            }
+            catch (Exception e)
+            {
+                OutputWriter.DisplayException(e.Message);
+            }
+        }
+
+
+        private void ParseCommand(string input, string command, string[] data)
+        {
             switch (command)
             {
                 case "open":
@@ -38,13 +67,13 @@ namespace BashSoft
                 case "cmp":
                     TryCompareFiles(input, data);
                     break;
-                case "cdRel":
+                case "cdrel":
                     TryChangePathRelatively(input, data);
                     break;
-                case "cdAbs":
+                case "cdabs":
                     TryChangePathAbsolute(input, data);
                     break;
-                case "readDb":
+                case "readdb":
                     TryReadDatabaseFromFile(input, data);
                     break;
                 case "dropdb":
@@ -59,11 +88,11 @@ namespace BashSoft
                 case "order":
                     TryOrderAndTake(input, data);
                     break;
-                case "decOrder":
+                case "decorder":
                     break;
                 case "download":
                     break;
-                case "downloadAsynch":
+                case "downloadasynch":
                     break;
                 case "show":
                     TryShowWantedData(input, data);
@@ -72,7 +101,9 @@ namespace BashSoft
                     DisplayInvalidCommandMessage(input);
                     break;
             }
+
         }
+
 
         private void TryOrderAndTake(string input, string[] data)
         {
@@ -227,7 +258,7 @@ namespace BashSoft
             {
                 return;
             }
-            
+
             var absPath = data[1];
             this.inputOutputManager.ChangeCurrentDirectoryAbsolute(absPath);
         }
@@ -292,7 +323,7 @@ namespace BashSoft
                 DisplayInvalidCommandMessage(string.Join(" ", data));
                 return false;
             }
-            
+
             return true;
         }
 
@@ -303,7 +334,7 @@ namespace BashSoft
 
         private void TryDropDb(string input, string[] data)
         {
-            if (data.Length !=1)
+            if (data.Length != 1)
             {
                 this.DisplayInvalidCommandMessage(input);
                 return;

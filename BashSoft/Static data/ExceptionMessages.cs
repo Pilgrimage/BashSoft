@@ -46,6 +46,7 @@ namespace BashSoft
             "The number of scores for the given course is greater than the possible.";
 
         public static string InvalidScore = "The number for the score you've entered is not in the range of 0 - 100";
+        public static string NullOrEmptyValue = "The value of the variable CANNOT be null or empty!";
 
     }
 }
