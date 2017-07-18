@@ -1,9 +1,38 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.15
+VisualStudioVersion = 15.0.26430.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BashSoft", "BashSoft\BashSoft.csproj", "{28145BCF-5E3C-4D9B-86AC-9CEDCF3847AB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Instructions01", "Instructions01", "{7750ADA6-5C1A-4993-A8F2-954B0603DB27}"
+	ProjectSection(SolutionItems) = preProject
+		BashSoft\Instructions01\01.CSAdv-Stacks-And-Queues-Lab.docx = BashSoft\Instructions01\01.CSAdv-Stacks-And-Queues-Lab.docx
+		BashSoft\Instructions01\02.CSAdv-Sets-And-Dictionaries-Lab.docx = BashSoft\Instructions01\02.CSAdv-Sets-And-Dictionaries-Lab.docx
+		BashSoft\Instructions01\02.data.txt = BashSoft\Instructions01\02.data.txt
+		BashSoft\Instructions01\03.CSAdv-Files-And-Directories-Lab.docx = BashSoft\Instructions01\03.CSAdv-Files-And-Directories-Lab.docx
+		BashSoft\Instructions01\03.test1.txt = BashSoft\Instructions01\03.test1.txt
+		BashSoft\Instructions01\03.test2.txt = BashSoft\Instructions01\03.test2.txt
+		BashSoft\Instructions01\03.test3.txt = BashSoft\Instructions01\03.test3.txt
+		BashSoft\Instructions01\04.actual.txt = BashSoft\Instructions01\04.actual.txt
+		BashSoft\Instructions01\04.CSAdv-Exception-Handling-Lab.docx = BashSoft\Instructions01\04.CSAdv-Exception-Handling-Lab.docx
+		BashSoft\Instructions01\04.expected.txt = BashSoft\Instructions01\04.expected.txt
+		BashSoft\Instructions01\05.CSAdv-Strings-And-Text-Processing-Lab.docx = BashSoft\Instructions01\05.CSAdv-Strings-And-Text-Processing-Lab.docx
+		BashSoft\Instructions01\05.getHelp.txt = BashSoft\Instructions01\05.getHelp.txt
+		BashSoft\Instructions01\06.CSAdv-Regular-Expressions-Lab.docx = BashSoft\Instructions01\06.CSAdv-Regular-Expressions-Lab.docx
+		BashSoft\Instructions01\06.dataNew.txt = BashSoft\Instructions01\06.dataNew.txt
+		BashSoft\Instructions01\07.CSAdv-Functional-Programming-Lab.docx = BashSoft\Instructions01\07.CSAdv-Functional-Programming-Lab.docx
+		BashSoft\Instructions01\08.CSAdv-LINQ-Lab.docx = BashSoft\Instructions01\08.CSAdv-LINQ-Lab.docx
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Instructions02", "Instructions02", "{AFFFC717-BAF6-44E2-A063-58991193A556}"
+	ProjectSection(SolutionItems) = preProject
+		BashSoft\Instructions02\01.CSOOPBasics-Defining-Classes-And-Methods-Lab.docx = BashSoft\Instructions02\01.CSOOPBasics-Defining-Classes-And-Methods-Lab.docx
+		BashSoft\Instructions02\01.data.txt = BashSoft\Instructions02\01.data.txt
+		BashSoft\Instructions02\02.CSOOPBasics-Encapsulation-Lab.docx = BashSoft\Instructions02\02.CSOOPBasics-Encapsulation-Lab.docx
+		BashSoft\Instructions02\05.CSOOPBasics-Inheritance-Lab.docx = BashSoft\Instructions02\05.CSOOPBasics-Inheritance-Lab.docx
+		BashSoft\Instructions02\06.CSOOPBasics-Polymorphism-Lab.docx = BashSoft\Instructions02\06.CSOOPBasics-Polymorphism-Lab.docx
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

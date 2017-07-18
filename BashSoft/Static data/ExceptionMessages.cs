@@ -25,7 +25,7 @@
         public static string InvalidQueryComparison =
             "The comparison query you want, does not exist in the context of the current program!";
 
-        public static string InvalidTakeQueryParamter = "The take command expected does not match the format wanted!";
+        public static string InvalidTakeQuantityParameter = "The take command expected does not match the format wanted!";
 
 
         public static string StudentAlreadyEnrolledInGivenCourse = $"The {0} already exists in {1}.";
