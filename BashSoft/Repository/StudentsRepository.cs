@@ -7,17 +7,19 @@
     using System.Text.RegularExpressions;
     using BashSoft.Exceptions;
     using BashSoft.Models;
+    using Contracts;
+    using DataStructures;
 
-    public class StudentsRepository
+    public class StudentsRepository : IDatabase
     {
-        private Dictionary<string, Course> courses;
-        private Dictionary<string, Student> students;
+        private Dictionary<string, ICourse> courses;
+        private Dictionary<string, IStudent> students;
 
         private bool isDataInitialized = false;
-        private RepositoryFilter filter;
-        private RepositorySorter sorter;
+        private IDataFilter filter;
+        private IDataSorter sorter;
 
-        public StudentsRepository(RepositorySorter sorter, RepositoryFilter filter)
+        public StudentsRepository(IDataSorter sorter, IDataFilter filter)
         {
             this.filter = filter;
             this.sorter = sorter;
@@ -65,8 +67,8 @@
                 throw new InvalidOperationException(ExceptionMessages.DataAlreadyInitialisedException);
             }
 
-            this.students = new Dictionary<string, Student>();
-            this.courses = new Dictionary<string, Course>();
+            this.students = new Dictionary<string, IStudent>();
+            this.courses = new Dictionary<string, ICourse>();
             OutputWriter.WriteMessageOnNewLine("Reading Data...");
             ReadData(fileName);
         }
@@ -113,7 +115,7 @@
                                 OutputWriter.DisplayException(ExceptionMessages.InvalidScore);
                             }
 
-                            if (scores.Length > Course.NumberOfTasksOnExam)
+                            if (scores.Length > SoftUniCourse.NumberOfTasksOnExam)
                             {
                                 OutputWriter.DisplayException(ExceptionMessages.InvalidNumberOfScores);
                                 continue;
@@ -121,16 +123,16 @@
 
                             if (!this.students.ContainsKey(studentName))
                             {
-                                this.students.Add(studentName, new Student(studentName));
+                                this.students.Add(studentName, new SoftUniStudent(studentName));
                             }
 
                             if (!this.courses.ContainsKey(courseName))
                             {
-                                this.courses.Add(courseName, new Course(courseName));
+                                this.courses.Add(courseName, new SoftUniCourse(courseName));
                             }
 
-                            Course course = this.courses[courseName];
-                            Student student = this.students[studentName];
+                            ICourse course = this.courses[courseName];
+                            IStudent student = this.students[studentName];
 
                             student.EnrollInCourse(course);
                             student.SetMarksInCourse(courseName, scores);
@@ -206,6 +208,20 @@
                     this.GetStudentScoresFromCourse(courseName,studentMarksEntry.Key);
                 }
             }
+        }
+
+        public ISimpleOrderedBag<ICourse> GetAllCoursesSorted(IComparer<ICourse> cmp)
+        {
+            SimpleSortedList<ICourse> sortedCourses = new SimpleSortedList<ICourse>(cmp);
+            sortedCourses.AddAll(this.courses.Values);
+            return sortedCourses;
+        }
+
+        public ISimpleOrderedBag<IStudent> GetAllStudentsSorted(IComparer<IStudent> cmp)
+        {
+            SimpleSortedList<IStudent> sortedStudents = new SimpleSortedList<IStudent>(cmp);
+            sortedStudents.AddAll(this.students.Values);
+            return sortedStudents;
         }
     }
 }

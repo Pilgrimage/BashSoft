@@ -1,10 +1,11 @@
 ﻿namespace BashSoft.IO.Commands
 {
     using BashSoft.Exceptions;
+    using Contracts;
 
     public class ChangeRelativePathCommand : Command
     {
-        public ChangeRelativePathCommand(string input, string[] data, Tester judge, StudentsRepository repository, IOManager inputOutputManager) 
+        public ChangeRelativePathCommand(string input, string[] data, IContentComparer judge, IDatabase repository, IDirectoryManager inputOutputManager) 
             : base(input, data, judge, repository, inputOutputManager)
         {
         }

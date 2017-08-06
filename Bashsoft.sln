@@ -34,6 +34,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Instructions02", "Instructi
 		BashSoft\Instructions02\06.CSOOPBasics-Polymorphism-Lab.docx = BashSoft\Instructions02\06.CSOOPBasics-Polymorphism-Lab.docx
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Instructions03", "Instructions03", "{30459C0E-1183-48FC-93C5-C9398B2982AE}"
+	ProjectSection(SolutionItems) = preProject
+		Instructions03\01.CSOOPAdv-Interfaces-And-Abstraction-Lab.docx = Instructions03\01.CSOOPAdv-Interfaces-And-Abstraction-Lab.docx
+		Instructions03\02.CSOOPAdv-Generics-Iterators-Lab.docx = Instructions03\02.CSOOPAdv-Generics-Iterators-Lab.docx
+		Instructions03\03. CSharp-OOP-Advanced-Style-Cop-Lab.docx = Instructions03\03. CSharp-OOP-Advanced-Style-Cop-Lab.docx
+		Instructions03\04. CSharp-OOP-Advanced-Reflection-Lab.docx = Instructions03\04. CSharp-OOP-Advanced-Reflection-Lab.docx
+		Instructions03\05. CSharp-OOP-Advanced-Unit-Testing-Lab.docx = Instructions03\05. CSharp-OOP-Advanced-Unit-Testing-Lab.docx
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

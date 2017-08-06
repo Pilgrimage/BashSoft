@@ -3,29 +3,30 @@
     using System;
     using BashSoft.IO.Commands;
     using BashSoft.Exceptions;
+    using Contracts;
 
 
-    public class CommandInterpreter
+    public class CommandInterpreter : IInterpreter
     {
-        private Tester judge;
-        private StudentsRepository repository;
-        private IOManager inputOutputManager;
+        private IContentComparer  judge;
+        private IDatabase repository;
+        private IDirectoryManager inputOutputManager;
 
-        public CommandInterpreter(Tester judge, StudentsRepository repository, IOManager inputOutputManager)
+        public CommandInterpreter(IContentComparer judge, IDatabase repository, IDirectoryManager inputOutputManager)
         {
             this.judge = judge;
             this.repository = repository;
             this.inputOutputManager = inputOutputManager;
         }
 
-        public void InterpredCommand(string input)
+        public void InterpretCommand(string input)
         {
             string[] data = input.Split(' ');
             string commandName = data[0].ToLower();
 
             try
             {
-                Command command = this.ParseCommand(input, commandName, data);
+                IExecutable command = this.ParseCommand(input, commandName, data);
                 command.Execute();
             }
             catch (Exception ex)
@@ -34,7 +35,7 @@
             }
         }
         
-        private Command ParseCommand(string input, string command, string[] data)
+        private IExecutable ParseCommand(string input, string command, string[] data)
         {
             switch (command)
             {
@@ -60,6 +61,9 @@
                     return new PrintFilteredStudentsCommand(input, data, this.judge, this.repository, this.inputOutputManager);
                 case "order":
                     return new PrintOrderedStudentsCommand(input, data, this.judge, this.repository, this.inputOutputManager);
+                case "display":
+                    return new DisplayCommand(input, data, this.judge, this.repository, this.inputOutputManager);
+
                 case "decorder":
                     //TODO
                     throw new InvalidCommandException(input);

@@ -1,0 +1,380 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BashSoft.DataStructures.SimpleSortedList&lt;T&gt;" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAQAAAYAwBAAAIAAQAAAAAAAAAAEDAAAAAEAAAA=</HashCode>
+      <FileName>DataStructures\SimpleSortedList.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BashSoft.Exceptions.CourseNotFoundException" Collapsed="true">
+    <Position X="8.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Exceptions\CourseNotFoundException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BashSoft.Exceptions.DuplicateEntryInStructureException" Collapsed="true">
+    <Position X="10" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\DuplicateEntryInStructureException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BashSoft.Exceptions.InvalidCommandException" Collapsed="true">
+    <Position X="6.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\InvalidCommandException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BashSoft.Exceptions.InvalidFileNameException" Collapsed="true">
+    <Position X="8.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\InvalidFileNameException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BashSoft.Exceptions.InvalidPathException" Collapsed="true">
+    <Position X="10" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\InvalidPathException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BashSoft.Exceptions.InvalidStringException" Collapsed="true">
+    <Position X="11.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Exceptions\InvalidStringException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BashSoft.CommandInterpreter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAACAAAAAAAAAAAAACAAAAAAAIAAAABAAAA=</HashCode>
+      <FileName>IO\CommandInterpreter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BashSoft.InputReader" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="13.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAgAAgAAAAAAAA=</HashCode>
+      <FileName>IO\InputReader.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BashSoft.IOManager" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="13.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAABAAAAAAAAAAAAQCAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IO\IOManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BashSoft.OutputWriter" Collapsed="true">
+    <Position X="8.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAQAAAAAAAEAABAgAAAAAAAAAAAA=</HashCode>
+      <FileName>IO\OutputWriter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BashSoft.Tester" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="13.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAEQAAAAAAAAAAAAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>Judge\Tester.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BashSoft.Launcher" Collapsed="true">
+    <Position X="6.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Launcher.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BashSoft.RepositoryFilter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="10" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>Repository\RepositoryFilter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BashSoft.RepositorySorter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="11.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repository\RepositorySorter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BashSoft.StudentsRepository" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="11.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAIgAAABAAREEAAAAAAGAAAAAAAIAIAEABACAACAAA=</HashCode>
+      <FileName>Repository\StudentsRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BashSoft.ExceptionMessages" Collapsed="true">
+    <Position X="11.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAABAAACAAYgAAABAEAAJAAgAAACAAAAAAMIAA=</HashCode>
+      <FileName>Static data\ExceptionMessages.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BashSoft.SessionData" Collapsed="true">
+    <Position X="13.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Static data\SessionData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BashSoft.IO.Commands.ChangeAbsolutePathCommand" Collapsed="true">
+    <Position X="4.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IO\Commands\ChangeAbsolutePathCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BashSoft.IO.Commands.ChangeRelativePathCommand" Collapsed="true">
+    <Position X="6.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IO\Commands\ChangeRelativePathCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BashSoft.IO.Commands.Command" Collapsed="true">
+    <Position X="2" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAKAAQAAAAAAAAAECAAABAAAIAQAACAAAA=</HashCode>
+      <FileName>IO\Commands\Command.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BashSoft.IO.Commands.CompareFilesCommand" Collapsed="true">
+    <Position X="9.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IO\Commands\CompareFilesCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BashSoft.IO.Commands.DisplayCommand" Collapsed="true">
+    <Position X="11.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAEAAAAAAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>IO\Commands\DisplayCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BashSoft.IO.Commands.DropDatabaseCommand" Collapsed="true">
+    <Position X="0.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IO\Commands\DropDatabaseCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BashSoft.IO.Commands.GetHelpCommand" Collapsed="true">
+    <Position X="2.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>IO\Commands\GetHelpCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BashSoft.IO.Commands.MakeDirectoryCommand" Collapsed="true">
+    <Position X="3.75" Y="3.25" Width="1.5" />
+    <InheritanceLine Type="BashSoft.IO.Commands.Command" ManuallyRouted="true">
+      <Path>
+        <Point X="2.75" Y="1.062" />
+        <Point X="2.75" Y="1.578" />
+        <Point X="4.5" Y="1.578" />
+        <Point X="4.5" Y="3.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IO\Commands\MakeDirectoryCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BashSoft.IO.Commands.OpenFileCommand" Collapsed="true">
+    <Position X="5.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IO\Commands\OpenFileCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BashSoft.IO.Commands.PrintFilteredStudentsCommand" Collapsed="true">
+    <Position X="7.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IO\Commands\PrintFilteredStudentsCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BashSoft.IO.Commands.PrintOrderedStudentsCommand" Collapsed="true">
+    <Position X="8.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IO\Commands\PrintOrderedStudentsCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BashSoft.IO.Commands.ReadDatabaseCommand" Collapsed="true">
+    <Position X="10.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IO\Commands\ReadDatabaseCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BashSoft.IO.Commands.ShowCourseCommand" Collapsed="true">
+    <Position X="12.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IO\Commands\ShowCourseCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BashSoft.IO.Commands.TraverseFoldersCommand" Collapsed="true">
+    <Position X="1.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IO\Commands\TraverseFoldersCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BashSoft.Models.SoftUniCourse" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="8.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAQAYEEAAAAAQAAAAEAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>Models\SoftUniCourse.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BashSoft.Models.SoftUniStudent" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="10" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAEAAAQEAAgAAAAIAAAAAQAAAQQAAAECAAA=</HashCode>
+      <FileName>Models\SoftUniStudent.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Interface Name="BashSoft.Contracts.IContentComparer" Collapsed="true">
+    <Position X="15.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>Contracts\IContentComparer.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BashSoft.Contracts.ICourse" Collapsed="true">
+    <Position X="15.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAAAAAAAAAQAAAAAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>Contracts\ICourse.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BashSoft.Contracts.IDatabase" Collapsed="true">
+    <Position X="0.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>Contracts\IDatabase.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BashSoft.Contracts.IDataFilter" Collapsed="true">
+    <Position X="15.25" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>Contracts\IDataFilter.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BashSoft.Contracts.IDataSorter" Collapsed="true">
+    <Position X="15.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Contracts\IDataSorter.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BashSoft.Contracts.IDirectoryChanger" Collapsed="true">
+    <Position X="0.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAAAAAAAAAAQAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Contracts\IDirectoryChanger.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BashSoft.Contracts.IDirectoryCreator" Collapsed="true">
+    <Position X="4.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Contracts\IDirectoryCreator.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BashSoft.Contracts.IDirectoryManager" Collapsed="true">
+    <Position X="0.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Contracts\IDirectoryManager.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BashSoft.Contracts.IDirectoryTraverser" Collapsed="true">
+    <Position X="2.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Contracts\IDirectoryTraverser.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BashSoft.Contracts.IExecutable" Collapsed="true">
+    <Position X="15.25" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Contracts\IExecutable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BashSoft.Contracts.IFilteredTaker" Collapsed="true">
+    <Position X="2.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>Contracts\IFilteredTaker.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BashSoft.Contracts.IInputReader" Collapsed="true">
+    <Position X="15.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>Contracts\IInputReader.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BashSoft.Contracts.IInterpreter" Collapsed="true">
+    <Position X="15.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Contracts\IInterpreter.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BashSoft.Contracts.IOrderedTaker" Collapsed="true">
+    <Position X="0.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Contracts\IOrderedTaker.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BashSoft.Contracts.IRequester" Collapsed="true">
+    <Position X="4.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAEEAAAAAACAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Contracts\IRequester.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BashSoft.Contracts.ISimpleOrderedBag&lt;T&gt;" Collapsed="true">
+    <Position X="15.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAQAgAAAAAAAQAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Contracts\ISimpleOrderedBag.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BashSoft.Contracts.IStudent" Collapsed="true">
+    <Position X="15.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAAAAAAAAgAAAAAAAAAAQAAAQAAAAACAAA=</HashCode>
+      <FileName>Contracts\IStudent.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

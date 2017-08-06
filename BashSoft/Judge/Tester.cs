@@ -3,8 +3,9 @@
     using System;
     using System.IO;
     using BashSoft.Exceptions;
+    using Contracts;
 
-    public class Tester
+    public class Tester : IContentComparer
     {
         public string GetMismatchPath(string expectedOutputPath)
         {

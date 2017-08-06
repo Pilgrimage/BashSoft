@@ -2,10 +2,11 @@
 {
     using BashSoft.Exceptions;
     using System.Diagnostics;
+    using BashSoft.Contracts;
 
     public class OpenFileCommand : Command
     {
-        public OpenFileCommand(string input, string[] data, Tester judge, StudentsRepository repository, IOManager inputOutputManager) 
+        public OpenFileCommand(string input, string[] data, IContentComparer judge, IDatabase repository, IDirectoryManager inputOutputManager) 
             : base(input, data, judge, repository, inputOutputManager)
         {
         }
