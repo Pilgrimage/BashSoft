@@ -1,14 +1,16 @@
 ﻿namespace BashSoft
 {
     using System;
+    using System.Linq;
+    using System.Reflection;
+    using BashSoft.Attributes;
     using BashSoft.IO.Commands;
     using BashSoft.Exceptions;
-    using Contracts;
-
+    using BashSoft.Contracts;
 
     public class CommandInterpreter : IInterpreter
     {
-        private IContentComparer  judge;
+        private IContentComparer judge;
         private IDatabase repository;
         private IDirectoryManager inputOutputManager;
 
@@ -34,53 +36,65 @@
                 OutputWriter.DisplayException(ex.Message);
             }
         }
-        
+
         private IExecutable ParseCommand(string input, string command, string[] data)
         {
-            switch (command)
-            {
-                case "open":
-                    return new OpenFileCommand(input, data, this.judge, this.repository, this.inputOutputManager);
-                case "mkdir":
-                    return new MakeDirectoryCommand(input, data, this.judge, this.repository, this.inputOutputManager);
-                case "ls":
-                    return new TraverseFoldersCommand(input, data, this.judge, this.repository, this.inputOutputManager);
-                case "cmp":
-                    return new CompareFilesCommand(input, data, this.judge, this.repository, this.inputOutputManager);
-                case "cdrel":
-                    return new ChangeRelativePathCommand(input, data, this.judge, this.repository, this.inputOutputManager);
-                case "cdabs":
-                    return new ChangeAbsolutePathCommand(input, data, this.judge, this.repository, this.inputOutputManager);
-                case "readdb":
-                    return new ReadDatabaseCommand(input, data, this.judge, this.repository, this.inputOutputManager);
-                case "dropdb":
-                    return new DropDatabaseCommand(input, data, this.judge, this.repository, this.inputOutputManager);
-                case "help":
-                    return new GetHelpCommand(input, data, this.judge, this.repository, this.inputOutputManager);
-                case "filter":
-                    return new PrintFilteredStudentsCommand(input, data, this.judge, this.repository, this.inputOutputManager);
-                case "order":
-                    return new PrintOrderedStudentsCommand(input, data, this.judge, this.repository, this.inputOutputManager);
-                case "display":
-                    return new DisplayCommand(input, data, this.judge, this.repository, this.inputOutputManager);
 
-                case "decorder":
-                    //TODO
-                    throw new InvalidCommandException(input);
-                case "download":
-                    //TODO
-                    throw new InvalidCommandException(input);
-                case "downloadasynch":
-                    //TODO
-                    throw new InvalidCommandException(input);
-                case "show":
-                    return new ShowCourseCommand(input, data, this.judge, this.repository, this.inputOutputManager);
-                default:
-                    throw new InvalidCommandException(input);
+            object[] parametersForConstruction = new object[]
+            {
+                input,
+                data
+            };
+
+            // or .GetCustomAttributes(typeof(AliasAttribute))
+
+            Type typeOfCommand = Assembly
+                .GetExecutingAssembly()
+                .GetTypes()
+                .FirstOrDefault(t => t.GetCustomAttributes<AliasAttribute>()
+                                      .Where(atr => atr.Equals(command))
+                                      .ToArray().Length > 0);
+
+            if (typeOfCommand==null)
+            {
+                throw new InvalidCommandException(input);
             }
 
+            // Create Instance of Command 
+            IExecutable currentCommand = (Command)Activator.CreateInstance(typeOfCommand, parametersForConstruction);
+            
+            // Inject values to fields
+            currentCommand = this.InjectDependencies(currentCommand);
+
+            return currentCommand;
         }
 
 
+        private IExecutable InjectDependencies(IExecutable currentCommand)
+        {
+            FieldInfo[] commandFields = currentCommand
+                .GetType()
+                .GetFields(BindingFlags.Instance | BindingFlags.NonPublic)
+                .Where(f => f.GetCustomAttributes<InjectAttribute>() != null)
+                .ToArray();
+
+            FieldInfo[] interpreterFields = this
+                .GetType()
+                .GetFields(BindingFlags.Instance | BindingFlags.NonPublic);
+
+            foreach (FieldInfo commandField in commandFields)
+            {
+                FieldInfo interpreterField = interpreterFields
+                    .First(f => f.FieldType == commandField.FieldType);
+
+                object valueToInject = interpreterField.GetValue(this);
+
+                commandField.SetValue(currentCommand, valueToInject);
+            }
+
+            return currentCommand;
+        }
     }
+
 }
+

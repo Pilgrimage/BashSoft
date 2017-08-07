@@ -1,12 +1,16 @@
 ﻿namespace BashSoft.IO.Commands
 {
+    using BashSoft.Attributes;
     using BashSoft.Exceptions;
-    using Contracts;
+    using BashSoft.Contracts;
 
+    [Alias("order")]
     public class PrintOrderedStudentsCommand : Command
     {
-        public PrintOrderedStudentsCommand(string input, string[] data, IContentComparer judge, IDatabase repository, IDirectoryManager inputOutputManager) 
-            : base(input, data, judge, repository, inputOutputManager)
+        [Inject]
+        private IDatabase repository;
+
+        public PrintOrderedStudentsCommand(string input, string[] data) : base(input, data)
         {
         }
 
@@ -14,17 +18,15 @@
         {
             if (this.Data.Length == 5)
             {
-                string courseName = this.Data[1];
-                string filter = this.Data[2].ToLower();
-                string takeCommand = this.Data[3].ToLower();
-                string takeQuantity = this.Data[4].ToLower();
-
-                TryParseParametersForOrderAndTake(takeCommand, takeQuantity, courseName, filter);
-            }
-            else
-            {
                 throw new InvalidCommandException(this.Input);
             }
+
+            string courseName = this.Data[1];
+            string filter = this.Data[2].ToLower();
+            string takeCommand = this.Data[3].ToLower();
+            string takeQuantity = this.Data[4].ToLower();
+
+            TryParseParametersForOrderAndTake(takeCommand, takeQuantity, courseName, filter);
         }
 
         private void TryParseParametersForOrderAndTake(string takeCommand, string takeQuantity, string courseName, string filter)
@@ -33,7 +35,7 @@
             {
                 if (takeQuantity == "all")
                 {
-                    this.Repository.OrderAndTake(courseName, filter);
+                    this.repository.OrderAndTake(courseName, filter);
                 }
                 else
                 {
@@ -41,7 +43,7 @@
                     bool hasParsed = int.TryParse(takeQuantity, out studentsToTake);
                     if (hasParsed)
                     {
-                        this.Repository.OrderAndTake(courseName, filter, studentsToTake);
+                        this.repository.OrderAndTake(courseName, filter, studentsToTake);
                     }
                     else
                     {

@@ -4,7 +4,7 @@
     using System.Collections.Generic;
     using System.IO;
     using BashSoft.Exceptions;
-    using Contracts;
+    using BashSoft.Contracts;
 
     public class IOManager : IDirectoryManager
     {

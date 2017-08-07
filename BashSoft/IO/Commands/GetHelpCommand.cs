@@ -1,12 +1,12 @@
 ﻿namespace BashSoft.IO.Commands
 {
+    using BashSoft.Attributes;
     using BashSoft.Exceptions;
-    using Contracts;
 
+    [Alias("help")]
     public class GetHelpCommand : Command
     {
-        public GetHelpCommand(string input, string[] data, IContentComparer judge, IDatabase repository, IDirectoryManager inputOutputManager) 
-            : base(input, data, judge, repository, inputOutputManager)
+        public GetHelpCommand(string input, string[] data) : base(input, data)
         {
         }
 
@@ -33,7 +33,7 @@
             OutputWriter.WriteMessageOnNewLine(string.Format("|{0, -98}|", "order increasing students - order {courseName} ascending/descending take 20/10/all (the output is written on the console)"));
             OutputWriter.WriteMessageOnNewLine(string.Format("|{0, -98}|", "download file - download: path of file (saved in current directory)"));
             OutputWriter.WriteMessageOnNewLine(string.Format("|{0, -98}|", "download file asinchronously - downloadAsynch: path of file (save in the current directory)"));
-            OutputWriter.WriteMessageOnNewLine(string.Format("|{0, -98}|", "display data entities - dislpay students/courses ascending/descending"));
+            OutputWriter.WriteMessageOnNewLine(string.Format("|{0, -98}|", "display data entities - disply: students/courses ascending/descending"));
             OutputWriter.WriteMessageOnNewLine(string.Format("|{0, -98}|", "get help – help"));
             OutputWriter.WriteMessageOnNewLine($"{new string('_', 100)}");
             OutputWriter.WriteEmptyLine();

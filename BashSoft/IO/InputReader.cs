@@ -1,7 +1,7 @@
 ﻿namespace BashSoft
 {
     using System;
-    using Contracts;
+    using BashSoft.Contracts;
 
     public class InputReader : IInputReader
     {

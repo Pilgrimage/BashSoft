@@ -1,30 +1,32 @@
 ﻿namespace BashSoft.IO.Commands
 {
+    using BashSoft.Attributes;
     using BashSoft.Exceptions;
-    using Contracts;
+    using BashSoft.Contracts;
 
+    [Alias("filter")]
     public class PrintFilteredStudentsCommand : Command
     {
-        public PrintFilteredStudentsCommand(string input, string[] data, IContentComparer judge, IDatabase repository, IDirectoryManager inputOutputManager) 
-            : base(input, data, judge, repository, inputOutputManager)
+        [Inject]
+        private IDatabase repository;
+
+        public PrintFilteredStudentsCommand(string input, string[] data) : base(input, data)
         {
         }
 
         public override void Execute()
         {
-            if (this.Data.Length == 5)
-            {
-                string courseName = this.Data[1];
-                string filter = this.Data[2].ToLower();
-                string takeCommand = this.Data[3].ToLower();
-                string takeQuantity = this.Data[4].ToLower();
-
-                TryParseParametersForFilterAndTake(takeCommand, takeQuantity, courseName, filter);
-            }
-            else
+            if (this.Data.Length != 5)
             {
                 throw new InvalidCommandException(this.Input);
             }
+
+            string courseName = this.Data[1];
+            string filter = this.Data[2].ToLower();
+            string takeCommand = this.Data[3].ToLower();
+            string takeQuantity = this.Data[4].ToLower();
+
+            TryParseParametersForFilterAndTake(takeCommand, takeQuantity, courseName, filter);
         }
 
         private void TryParseParametersForFilterAndTake(string takeCommand, string takeQuantity, string courseName, string filter)
@@ -33,15 +35,15 @@
             {
                 if (takeQuantity == "all")
                 {
-                    this.Repository.FilterAndTake(courseName, filter);
+                    this.repository.FilterAndTake(courseName, filter);
                 }
                 else
                 {
                     int studentsToTake;
                     bool hasParsed = int.TryParse(takeQuantity, out studentsToTake);
-                    if (hasParsed)
+                    if (!hasParsed)
                     {
-                        this.Repository.FilterAndTake(courseName, filter, studentsToTake);
+                        this.repository.FilterAndTake(courseName, filter, studentsToTake);
                     }
                     else
                     {
