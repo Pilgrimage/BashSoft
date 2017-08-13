@@ -1,0 +1,10 @@
+C:\GIT!!!\BashSoft\BashSoft.Tests\obj\Debug\BashSoft.Tests.csprojResolveAssemblyReference.cache
+C:\GIT!!!\BashSoft\BashSoft.Tests\bin\Debug\BashSoft.Tests.dll
+C:\GIT!!!\BashSoft\BashSoft.Tests\bin\Debug\BashSoft.Tests.pdb
+C:\GIT!!!\BashSoft\BashSoft.Tests\bin\Debug\BashSoft.exe
+C:\GIT!!!\BashSoft\BashSoft.Tests\bin\Debug\nunit.framework.dll
+C:\GIT!!!\BashSoft\BashSoft.Tests\bin\Debug\BashSoft.pdb
+C:\GIT!!!\BashSoft\BashSoft.Tests\bin\Debug\BashSoft.exe.config
+C:\GIT!!!\BashSoft\BashSoft.Tests\bin\Debug\nunit.framework.xml
+C:\GIT!!!\BashSoft\BashSoft.Tests\obj\Debug\BashSoft.Tests.dll
+C:\GIT!!!\BashSoft\BashSoft.Tests\obj\Debug\BashSoft.Tests.pdb
